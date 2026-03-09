@@ -1,0 +1,88 @@
+
+def entry():
+    x=str(input("Please enter ur vehicle number:"))
+    print("Fees for duration amount of time:"
+          "\n30 minutes = $5\n"
+          "1 hour = $10\n"
+          "1 hour and 30 minutes = $15\n"
+          "2 hours = $20\n"
+          "If u exceed the maximum amount of parking time, there will be an extra fee of $10 to pay")
+    y = str(input("Please enter the duration amount of time:"))
+    z = str(input("Please enter ur entry time:"))
+
+    vehicle_number = "\nvehicle number =" + x
+    duration_time = "\nduration amount of time = " + y
+    entry_time = "\nentry time = " + z
+
+    f = open("vehicle_parking.txt", "a")
+
+    f.write(vehicle_number)
+    f.write(duration_time)
+    f.write(entry_time)
+
+    f.close()
+
+entry()
+
+def exit():
+    f=open("vehicle_parking.txt", "a")
+    a= str(input("Press 1 if u want to leave or 2 if u want to continue:\n"))
+    x = str(input("Please enter ur entry time:"))
+    y = str(input("Please enter ur exit time:"))
+
+    if a == "1":
+        print("Calculating fee...")
+        y = str(input("Please enter the duration amount of time:"))
+        if y == "30 minutes":
+            minute_30 = "\nfee = $5"
+            f.write(minute_30)
+            print("Your fee is $5")
+            """if y - x <= 0.30:
+                print("No extra fees charged. Have a nice day")
+            elif y - x > 0.30:
+                print("You have stayed over the maximum duration amount of time. you have been charged 10 extra dollars. \n your total now is $15 ")
+            else:
+                print("something went wrong")"""
+        elif y == "1 hour":
+            hour_1 = "\nfee = $10"
+            f.write(hour_1)
+            print("Your fee is $10")
+            """if y - x <= 0.30:
+                print("no extra fees charged. Have a nice day")
+            elif y - x >= 0.60:
+                print("You have stayed over the maximum duration amount of time. you have been charged 10 extra dollars. \n your total now is $20 ")
+            else:
+                print("Something went wrong")"""
+        elif y == "1 hour and 30 minutes":
+            hour_and_30_minutes = "\nfee = $15"
+            f.write(hour_and_30_minutes)
+            print("Your fee is $15")
+            """if y - x <= 0.90:
+                print("no extra fees charged. have a nice day")
+
+            elif y - x > 0.90:
+                print("You have stayed over the maximum duration amount of time. you have been charged 10 extra dollars. \n your total now is $15 ")
+            else:
+                print("something went wrong")"""
+        elif y == "2 hours":
+            hour_2 = "\nfee = $20"
+            f.write(hour_2)
+            print("Your fee is $20")
+            """if y - x <= 0.120:
+                print("no extra fees charged. have a nic1e day")
+            elif y - x > 0.120:
+                print("You have stayed over the maximum duration amount of time. you have been charged 10 extra dollars. \n your total now is $15 ")
+        else:
+            print("something went wrong")"""
+    elif a == "2":
+        print("Continuing duration time...")
+    else:
+        print("something went wrong. try again")
+
+
+
+
+
+    f.close()
+
+exit()
