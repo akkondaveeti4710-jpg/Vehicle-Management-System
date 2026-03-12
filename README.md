@@ -31,4 +31,4 @@ The program saves information in a file called:
 vehicle_parking.txt
 
 ## Purpose
-This project was made to practice Python programming, including user input, conditions, and file handling.
+This project was made to practice Python programming, including user input, conditions, and file handling!
